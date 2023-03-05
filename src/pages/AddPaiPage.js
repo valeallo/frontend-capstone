@@ -42,7 +42,7 @@ const AddPaiPage = (
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                 htmlFor="patientName"
               >
-                Patient Name
+                Nome 
               </label>
               <input
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
@@ -62,7 +62,7 @@ const AddPaiPage = (
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                 htmlFor="patientLastName"
               >
-                Patient Last Name
+               Cognome
               </label>
               <input
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
@@ -81,7 +81,7 @@ const AddPaiPage = (
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                 htmlFor="patientPhoneNumber"
               >
-                Patient Phone Number
+                Numero di telefono
               </label>
               <input
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
@@ -103,7 +103,7 @@ const AddPaiPage = (
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                 htmlFor="patientDateOfBirth"
               >
-                Patient Date of Birth
+                Data di Nascita
               </label>
               <input
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
@@ -125,7 +125,7 @@ const AddPaiPage = (
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                 htmlFor="patientAddress"
               >
-                Patient Address
+               Indirizzo
               </label>
               <input
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
@@ -144,7 +144,7 @@ const AddPaiPage = (
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                 htmlFor="patientCity"
               >
-                Service
+                Servizio
               </label>
               <div className="relative">
                 <select
@@ -156,10 +156,12 @@ const AddPaiPage = (
                   required={true}
                 
                 >
-                  <option>Choose a Service</option>
-                  <option>Physical Therapy</option>
-                  <option>Occupational Therapy</option>
-                  <option>Speech Therapy</option>
+                  <option>Scegli un servizio</option>
+                  <option>Assistenziale</option>
+                  <option>Infiermeristico</option>
+                  <option>Fisioterapia</option>
+                  <option>Logopedia</option>
+                  <option>Psicoterapia</option>
                 </select>
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                   <svg
@@ -178,7 +180,7 @@ const AddPaiPage = (
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                 htmlFor="numberOfTreatments"
                 >
-                Number of Treatments
+                Numero accessi
             </label>
             <input
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
@@ -197,7 +199,7 @@ const AddPaiPage = (
             <label
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                 htmlFor="status" >
-                Status
+                Stato
             </label>
             <div className="relative">
                 <select
@@ -210,9 +212,10 @@ const AddPaiPage = (
                 required={true}
                
                 >
-                <option>Choose a Status</option>
-                <option>Active</option>
-                <option>Inactive</option>
+                 <option>Scegli uno stato</option>
+                <option>aperto</option>
+                <option>chiuso</option>
+                <option>scaduto/da rinnovare</option>
                 </select>
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                 <svg
@@ -233,7 +236,7 @@ const AddPaiPage = (
                 type="submit"
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               >
-                Submit
+                Invia
               </button>
         </div>
       </form>
