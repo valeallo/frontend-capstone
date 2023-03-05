@@ -21,6 +21,8 @@ const PaiPage = () => {
       patientAddress: response.data.patientAddress,
       service: response.data.service,
       numberOfTreatments: response.data.numberOfTreatments,
+      dateOfActivation: response.data.dateOfActivation,
+      expiringDate: response.data.expiringDate,
       status: response.data.status,
     };
     console.log("dai letti", data);
@@ -44,15 +46,17 @@ const PaiPage = () => {
         patientAddress: formData.patientAddress,
         service: formData.service,
         numberOfTreatments: formData.numberOfTreatments,
+        dateOfActivation: formData.dateOfActivation,
+        expiringDate: formData.expiringDate,
         status: formData.status,
       });
       console.log("status" + response.status);
       const success = response.status === 200;
       if (success) {
-        alert(response.status);
+        alert("Pai modificato correttamente!");
         console.log(response);
 
-        //navigate('/')
+        navigate('/')
       }
     } catch (err) {
       console.log(err);
@@ -71,7 +75,7 @@ const PaiPage = () => {
   return (
     <div className="pai_page flex w-screen h-screen">
       <Nav className="w-20%" />
-      <div className="w-80% flex flex-col">
+      <div className="w-80% flex flex-col justify-evenly">
         <h1> Modifica Pai: </h1>
         <form type="submit" onSubmit={handleSubmit}>
           <div className="w-full flex flex-row justify-evenly ">
@@ -216,6 +220,42 @@ const PaiPage = () => {
                 value={formData.numberOfTreatments}
               />
             </div>
+            <div className="w-full md:w-1/2 px-3">
+                <label
+                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  htmlFor="patientDateOfBirth"
+                >
+                  Data di inizio
+                </label>
+                <input
+                  className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                  id="dateOfActivation"
+                  name="dateOfActivation"
+                  type="date"
+                  onChange={handleChange}
+                  required={true}
+                  value={formData.dateOfActivation}
+                />
+              </div>
+              <div className="w-full md:w-1/2 px-3">
+                <label
+                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  htmlFor="patientDateOfBirth"
+                >
+                  Data di scadenza
+                </label>
+                <input
+                  className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                  id="expiringDate"
+                  name="expiringDate"
+                  type="date"
+                  onChange={handleChange}
+                  required={true}
+                  value={formData.expiringDate}
+                />
+              </div>
+
+              
             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
               <label
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
