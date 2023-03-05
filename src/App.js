@@ -8,6 +8,7 @@ import PaiPage from './pages/PaiPage';
 import StaffPage from './pages/StaffPage';
 import NewStaffMember from './pages/NewStaffMember';
 import AddPaiPage from './pages/AddPaiPage';
+import AddStaffMember from './pages/AddStaffMember';
 
 
 
@@ -23,7 +24,7 @@ function App() {
           <Route path="/pai" element={<AddPaiPage  />} />
           <Route path="/pai/:id" element={<PaiPage  />} />
           <Route path="/staff" element={<StaffPage />} />
-          <Route path="/user" element={<NewStaffMember  />} />
+          <Route path="/staff/new" element={<AddStaffMember />} />
           <Route path="/user/:id" element={<NewStaffMember edit={true} />} />
           </Route>
         </Routes>

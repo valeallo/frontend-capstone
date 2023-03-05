@@ -16,7 +16,7 @@ const Nav = () => {
 
 
 <div className="min-h-screen bg-[#2b2b3f]">
-  <div className="sidebar min-h-screen w-56 overflow-hidden border-r  bg-[#2b2b3f] hover:shadow-lg">
+  <div className="sidebar min-h-screen w-[3.35rem] overflow-hidden border-r hover:w-56  bg-[#2b2b3f] hover:shadow-lg">
     <div className="flex h-screen flex-col justify-between pt-2 pb-6">
       <div>
         <div className="w-max p-2.5">
@@ -54,13 +54,13 @@ const Nav = () => {
             </Link>
           </li>
           <li className="min-w-max">
-            <a href="#" className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600">
+            <Link to='/staff/new' className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path className="fill-current text-gray-600 group-hover:text-cyan-600" d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z" />
                 <path className="fill-current text-gray-300 group-hover:text-cyan-300" d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
               </svg>
               <span className="group-hover:text-gray-700">New Staff Member</span>
-            </a>
+            </Link>
           </li>
           <li className="min-w-max">
             <a href="#" className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600">
