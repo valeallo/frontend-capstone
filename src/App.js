@@ -1,23 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route, withRouter } from "react-router-dom";
+import Nav from './components/Nav';
+import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
+import ProtectedRoutes from './middleware/ProtectedRoutes';
+import PaiPage from './pages/PaiPage';
+import StaffPage from './pages/StaffPage';
+import NewStaffMember from './pages/NewStaffMember';
+import AddPaiPage from './pages/AddPaiPage';
+
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App flex">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route element={<ProtectedRoutes />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/pai" element={<AddPaiPage  />} />
+          <Route path="/pai/:id" element={<PaiPage  />} />
+          <Route path="/staff" element={<StaffPage />} />
+          <Route path="/user" element={<NewStaffMember  />} />
+          <Route path="/user/:id" element={<NewStaffMember edit={true} />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
