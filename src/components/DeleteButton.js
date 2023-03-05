@@ -1,17 +1,20 @@
 import React from 'react'
 import axios from 'axios'
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+
 
 const DeleteButton = ({id, element}) => {
     const handleDelete = () => {
         axios.delete(`http://localhost:5000/${element}/${id}`)
         .then(res => {
-            console.log(res)
-            console.log(res.data)
+            alert("Elemento eliminato")
             window.location.reload(false);
         })}
 
   return (
-   <button onClick={handleDelete}>X</button>
+   <button onClick={handleDelete}>
+         <DeleteOutlineIcon />
+   </button>
   )
 }
 

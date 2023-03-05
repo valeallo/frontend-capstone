@@ -52,20 +52,31 @@ const Dashboard = () => {
       <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
           <div className="overflow-hidden">
-            <table className="min-w-full text-center">
-              {/* <thead className="border-b">
-                <tr>
-                  <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4">
-                    className
+            <table className="min-w-full ">
+              <thead className="border-b">
+              <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4">
+                    
                   </th>
                   <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4">
-                    Heading
+                    Nome
                   </th>
                   <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4">
-                    Heading
+                    Cognome
                   </th>
-                </tr>
-              </thead> */}
+                  <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4">
+                   Servizio
+                  </th>
+                  <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4">
+                    Validità
+                  </th>
+                  <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4">
+                    Numero accessi
+                  </th>
+                  <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4">
+                    Stato
+                  </th>
+               
+              </thead>
               <tbody>
               {Pai &&
         !err &&
