@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Nav from "../components/Nav";
-import { useDispatch, useSelector } from 'react-redux'
+
 import PaiCard from "../components/PaiCard";
 import axios from "axios";
-import { getPosts, post, error, loading } from '../states/postSlice'
 
 
 const Dashboard = () => {
-  // const dispatch = useDispatch()
-  // const err = useSelector(error)
-  // const isLoading = useSelector(loading)
-  // const  Pai = useSelector(post)
+
   const [Pai, setPai] = useState(null)
   const [err, setErr] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
@@ -38,10 +34,6 @@ const Dashboard = () => {
 
 
 
-  // useEffect(()=>{
-  //   dispatch(getPosts(post))
-    
-  // }, [dispatch])
 
   return(
     <div className="dashboard_page flex w-screen h-screen">
@@ -58,11 +50,9 @@ const Dashboard = () => {
                     
                   </th>
                   <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4">
-                    Nome
+                    Paziente
                   </th>
-                  <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4">
-                    Cognome
-                  </th>
+                  
                   <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4">
                    Servizio
                   </th>
@@ -74,6 +64,9 @@ const Dashboard = () => {
                   </th>
                   <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4">
                     Stato
+                  </th>
+                  <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4">
+                    Assegna
                   </th>
                
               </thead>
