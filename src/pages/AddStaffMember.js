@@ -28,7 +28,13 @@ const AddStaffMember = () => {
     console.log("dati passati", formData);
     try {
       const response = await axios.post(`http://localhost:5000/addUser`, {
-        formData,
+        username: formData.username,
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        password: formData.password,
+        role: formData.role,
+        service: formData.service,
       });
       console.log("status" + response.status);
       const success = response.status === 200;
