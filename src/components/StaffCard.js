@@ -1,10 +1,16 @@
 import React from 'react'
 import DeleteButton from './DeleteButton'
+import { Link } from "react-router-dom";
+
 
 const StaffCard = ({user}) => {
   return (
     <tr className="border-b bg-gray-50 border-gray-200">
- 
+               <td className="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+                <Link to={`/users/${user._id}`}>
+              link
+              </Link>
+              </td>
               <td className="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
               {user.name}
               </td>
