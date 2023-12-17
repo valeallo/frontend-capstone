@@ -19,7 +19,7 @@ const NewStaffMember = ({editMode}) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         if(editMode) {
-            axios.patch(`http://localhost:5000/users/${id}`, formData)
+            axios.patch(`${process.env.REACT_APP_API_URL}/users/${id}`, formData)
             .then(res => {
                 console.log(res)
                 console.log(res.data)
@@ -27,7 +27,7 @@ const NewStaffMember = ({editMode}) => {
         } else {
         console.log('submit')
         console.log(formData)
-        axios.post('http://localhost:5000/addUser', formData)
+        axios.post(`${process.env.REACT_APP_API_URL}/addUser`, formData)
             .then(res => {
                 console.log(res)
                 console.log(res.data)
