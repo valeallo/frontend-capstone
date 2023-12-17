@@ -7,9 +7,8 @@ const AssignModal = ({ close, service, id }) => {
   const [formData , setFormData] = useState({})
 
   const fetchStaff = async () => {
-     const apiUrl = process.env.REACT_APP_API_URL;
     const response = await axios.get(
-      `${apiUrl}/service/${service}`
+      `${process.env.REACT_APP_API_URL}/service/${service}`
     );
     const data = response.data;
     setStaff(data);
@@ -18,7 +17,7 @@ const AssignModal = ({ close, service, id }) => {
 
   const handleAssign = async (e) => {
     e.preventDefault();
-    const response = await axios.post(`${apiUrl}/assistedBy/${id}`,{
+    const response = await axios.post(`${process.env.REACT_APP_API_URL}/assistedBy/${id}`,{
         formData
     });}
 
