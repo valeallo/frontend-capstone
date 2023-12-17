@@ -12,7 +12,7 @@ const EditStaffMember = () => {
   console.log(formData);
 
   const fetchData = async () => {
-    const response = await axios.get(`http://localhost:5000/user/${id}`);
+    const response = await axios.get(`${process.env.REACT_APP_API_URL}/user/${id}`);
     const data = {
       username: response.data.username,
       firstName: response.data.firstName,
@@ -34,7 +34,7 @@ const EditStaffMember = () => {
 
     console.log("dati passati", formData);
     try {
-      const response = await axios.patch(`http://localhost:5000/users/${id}`, {
+      const response = await axios.patch(`${process.env.REACT_APP_API_URL}/users/${id}`, {
         username: formData.username,
         firstName: formData.firstName,
         lastName: formData.lastName,
