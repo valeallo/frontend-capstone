@@ -11,7 +11,7 @@ const StaffPage = () => {
     const fetchProfessionals = async () => {
         setIsLoading(true)
         try {
-        const res = await fetch('http://localhost:5000/users')
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/users`)
         const data = await res.json()
         setProfessionals(data)
         setIsLoading(false)
