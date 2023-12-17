@@ -12,7 +12,7 @@ const PaiPage = () => {
   console.log(formData);
 
   const fetchData = async () => {
-    const response = await axios.get(`http://localhost:5000/pai/${id}`);
+    const response = await axios.get(`${process.env.REACT_APP_API_URL}/pai/${id}`);
     const data = {
       patientName: response.data.patientName,
       patientLastName: response.data.patientLastName,
@@ -38,7 +38,7 @@ const PaiPage = () => {
 
     console.log("dati passati", formData);
     try {
-      const response = await axios.patch(`http://localhost:5000/pai/${id}`, {
+      const response = await axios.patch(`${process.env.REACT_APP_API_URL}/pai/${id}`, {
         patientName: formData.patientName,
         patientLastName: formData.patientLastName,
         patientDateOfBirth: formData.patientDateOfBirth,
