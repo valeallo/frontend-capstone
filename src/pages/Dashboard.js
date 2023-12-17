@@ -18,7 +18,7 @@ const Dashboard = () => {
 
     try {
       const { data } = await axios.get(
-        `${process.env.REACT_APP_SERVER_BASE_URL}/pai`
+        `${process.env.REACT_APP_API_URL}/pai`
       )
       setPai(data)
       setIsLoading(false)
