@@ -5,7 +5,8 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
 const DeleteButton = ({id, element}) => {
     const handleDelete = () => {
-        axios.delete(`http://localhost:5000/${element}/${id}`)
+      const apiUrl = process.env.REACT_APP_API_URL;
+        axios.delete(`${apiUrl}/${element}/${id}`)
         .then(res => {
             alert("Elemento eliminato")
             window.location.reload(false);
