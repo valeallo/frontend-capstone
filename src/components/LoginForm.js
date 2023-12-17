@@ -18,7 +18,8 @@ const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const res = await axios.post('http://localhost:5000/users/login', formState)
+      const apiUrl = process.env.REACT_APP_API_URL;
+      const res = await axios.post( `${apiUrl}/users/login`, formState)
       if (res.status === 200) {
         sessionStorage.setItem('authorization', JSON.stringify(res.data))
         navigate('../dashboard', { replace: true })
