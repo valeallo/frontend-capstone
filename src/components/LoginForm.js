@@ -35,7 +35,7 @@ const LoginForm = () => {
 
   const loginAsLuana = async () => {
     const luanaCredentials = {
-      email: "Luana@email.it",
+      email: "luana@admin.it",
       password: "ciaociao"
     }
     setFormState(luanaCredentials)
