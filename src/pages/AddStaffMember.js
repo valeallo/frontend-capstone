@@ -26,7 +26,7 @@ const AddStaffMember = () => {
 
     console.log("dati passati", formData);
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/addUser`, {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/addStaff`, {
         name: formData.name,
         surname: formData.surname,
         email: formData.email,
