@@ -6,9 +6,8 @@ import { useParams, useNavigate } from "react-router-dom";
 
 const AddStaffMember = () => {
   const [formData, setFormData] = useState({
-    username: "",
-    firstName: "",
-    lastName: "",
+    name: "",
+    surname: "",
     email: "",
     password: "",
     role: "",
@@ -28,9 +27,8 @@ const AddStaffMember = () => {
     console.log("dati passati", formData);
     try {
       const response = await axios.post(`${process.env.REACT_APP_API_URL}/addUser`, {
-        username: formData.username,
-        firstName: formData.firstName,
-        lastName: formData.lastName,
+        name: formData.name,
+        surname: formData.surname,
         email: formData.email,
         password: formData.password,
         role: formData.role,
@@ -67,24 +65,6 @@ const AddStaffMember = () => {
         <form type="submit" onSubmit={handleSubmit}>
           <div className="w-full">
           <div className=" flex flex-wrap -mx-3 mb-6">
-
-              <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                <label
-                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  htmlFor="username"
-                >
-                  Username
-                </label>
-                <input
-                  className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                  id="username"
-                  name="username"
-                  type="text"
-                  onChange={handleChange}
-                  required={true}
-                  value={formData.username}
-                />
-              </div>
               <div className="w-full md:w-1/2 px-3">
                 <label
                   className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -94,12 +74,12 @@ const AddStaffMember = () => {
                 </label>
                 <input
                   className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                  id="firstName"
-                  name="firstName"
+                  id="name"
+                  name="name"
                   type="text"
                   onChange={handleChange}
                   required={true}
-                  value={formData.firstName}
+                  value={formData.name}
 
                 />
               </div>
@@ -112,12 +92,12 @@ const AddStaffMember = () => {
                 </label>
                 <input
                   className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                  id="lastName"
-                  name="lastName"
+                  id="surname"
+                  name="surname"
                   type="text"
                   onChange={handleChange}
                   required={true}
-                  value={formData.lastName}
+                  value={formData.surname}
                 />
               </div>
               <div className="w-full md:w-1/2 px-3">
