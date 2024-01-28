@@ -40,6 +40,7 @@ const LoginForm = () => {
     }
     setFormState(luanaCredentials)
     try {
+      const apiUrl = process.env.REACT_APP_API_URL;
       const res = await axios.post( `${apiUrl}/users/login`, luanaCredentials)
       if (res.status === 200) {
         sessionStorage.setItem('authorization', JSON.stringify(res.data))
