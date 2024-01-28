@@ -31,6 +31,27 @@ const LoginForm = () => {
       }
     }
   }
+
+
+  const loginAsLuana = async () => {
+    const luanaCredentials = {
+      email: "Luana@email.it",
+      password: "ciaociao"
+    }
+    setFormState(luanaCredentials)
+    try {
+      const res = await axios.post( `${apiUrl}/users/login`, luanaCredentials)
+      if (res.status === 200) {
+        sessionStorage.setItem('authorization', JSON.stringify(res.data))
+        navigate('../dashboard', { replace: true })
+      }
+    } catch (error) {
+      if (error) {
+        setLoginError(error.response.data)
+        console.log(error.response.data)
+      }
+    }
+  }
   
 
   return (
@@ -79,6 +100,13 @@ const LoginForm = () => {
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
       >
         Login
+      </button>
+      <button
+        type="submit"
+        onClick={loginAsLuana}
+        className="bg-blue-500 hover:bg-blue-700 w-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      >
+        Entra come Luana
       </button>
     </form>
   </div>
